@@ -31,11 +31,15 @@ export default function App() {
   function debounceExample() {
     dispatch(userActions.getAll());
   }
-  function onChangeSearch(st) {
-    if (st !== '') {
+  function onChangeSearch(value) {
+    if (value !== '') {
       var tmpArr = users.items;
       var newArr = tmpArr.filter((item) => {
-        if (item.name.indexOf(st) > -1) {
+        var keyword = value.toLowerCase();
+        var name = item.name.toLowerCase();
+        var email = item.email.toLowerCase();
+        
+        if (email.indexOf(keyword) > -1 || name.indexOf(keyword) > -1) {
           return item;
         }
       });
