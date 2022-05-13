@@ -17,9 +17,9 @@ import {
   DropdownItem,
   NavbarText,
 } from 'reactstrap';
-import Search from './search';
-import HomePage from './list';
-import Add from './add';
+import Search from './Test/search';
+import HomePage from './Test/list';
+import Add from './Test/add';
 import { MemoizeExamples } from './Examples/memoexample';
 import { userActions } from './red/_actions';
 
