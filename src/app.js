@@ -79,7 +79,25 @@ export default function App() {
                   }}
                 />
                 <Collapse isOpen={toggle} navbar={true}>
-                  <Nav className="me-auto" navbar></Nav>
+                  <NavItem>
+                    <NavLink href="/components/">Components</NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink href="https://github.com/reactstrap/reactstrap">
+                      GitHub
+                    </NavLink>
+                  </NavItem>
+                  <UncontrolledDropdown inNavbar nav>
+                    <DropdownToggle caret nav>
+                      Options
+                    </DropdownToggle>
+                    <DropdownMenu right>
+                      <DropdownItem>Option 1</DropdownItem>
+                      <DropdownItem>Option 2</DropdownItem>
+                      <DropdownItem divider />
+                      <DropdownItem>Reset</DropdownItem>
+                    </DropdownMenu>
+                  </UncontrolledDropdown>
                   <NavbarText>Simple Text</NavbarText>
                 </Collapse>
               </Navbar>
