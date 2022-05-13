@@ -17,15 +17,15 @@
 
       // Closure Start
       function ClosureFunction() {
-        var x;
+        var xc;
         function inc() {
-          x++;
+          xc++;
         }
         function val() {
-          console.log(x);
+          console.log(xc);
         }
         function init() {
-          x = 0;
+          xc = 0;
         }
         init();
         return {
@@ -46,12 +46,26 @@
       // Closure END
 
       // IIFF START
-      var x = 10;
+      var xy = 10;
       (function () {
-        var y = 10;
-        console.log('IIFE');
+        var yx = 10;
+        console.log('IIFE', xy);
       })();
+      // console.log(yx)  // Not defined
       // IIFF END
+
+      // IIFF Namespace Start
+      var stuNs = (function () {
+        function getName() {console.log('Get Name');}
+        function getAge() {console.log('Get Age');}
+        function getDob() {console.log('Get DOB');}
+        return {
+          getName,
+          getAge,
+        };
+      })();
+      stuNs.getName()
+      // IIFF Namespace END
     </script>
   </head>
   <body>
