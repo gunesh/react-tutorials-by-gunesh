@@ -22,6 +22,8 @@ import HomePage from './Test/list';
 import Add from './Test/add';
 import { MemoizeExamples } from './Examples/memoexample';
 import { userActions } from './red/_actions';
+import { Provider } from 'react-redux';
+import { store } from './red/store';
 
 export default function App() {
   const users = useSelector((state) => state.users);
@@ -66,7 +68,7 @@ export default function App() {
   }
 
   return (
-    <>
+    <Provider store={store}>
       <Container>
         <Row>
           <Col>
@@ -134,6 +136,6 @@ export default function App() {
           </Col>
         </Row>
       </Container>
-    </>
+      </Provider>
   );
 }
