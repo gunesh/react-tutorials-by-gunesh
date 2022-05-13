@@ -38,7 +38,6 @@ export default function App() {
         var keyword = value.toLowerCase();
         var name = item.name.toLowerCase();
         var email = item.email.toLowerCase();
-        
         if (email.indexOf(keyword) > -1 || name.indexOf(keyword) > -1) {
           return item;
         }
