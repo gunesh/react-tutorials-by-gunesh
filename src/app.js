@@ -1,6 +1,22 @@
 import React, { useEffect, useState, useCallback, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Container, Row, Col } from 'reactstrap';
+import {
+  Container,
+  Row,
+  Col,
+  Navbar,
+  NavbarBrand,
+  NavbarToggler,
+  Collapse,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText,
+} from 'reactstrap';
 import Search from './search';
 import HomePage from './list';
 import Add from './add';
@@ -10,6 +26,7 @@ import { userActions } from './red/_actions';
 export default function App() {
   const users = useSelector((state) => state.users);
   const [userlist, setUserList] = useState(users.items);
+  const [toggle, setToggle] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -51,6 +68,24 @@ export default function App() {
   return (
     <>
       <Container>
+        <Row>
+          <Col>
+            <div>
+              <Navbar color="light" expand="md" light>
+                <NavbarBrand href="/">reactstrap</NavbarBrand>
+                <NavbarToggler
+                  onClick={() => {
+                    setToggle(!toggle);
+                  }}
+                />
+                <Collapse isOpen={toggle} navbar={true}>
+                  <Nav className="me-auto" navbar></Nav>
+                  <NavbarText>Simple Text</NavbarText>
+                </Collapse>
+              </Navbar>
+            </div>
+          </Col>
+        </Row>
         <Row>
           <Col>
             <Search
