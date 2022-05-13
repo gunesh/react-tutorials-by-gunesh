@@ -13,8 +13,8 @@
       console.log(a);
       var y = x.filter((item) => item > 5);
       console.log(y);
-      var b =  x.map((item) => item).filter((abc,index,self)=>self[index]);
-      console.log(b)
+      var b =  x.map((item) => item).filter((abc,index,self)=>[self[index],abc]);
+      console.log(b);
     </script>
   </head>
   <body>
