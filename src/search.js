@@ -1,6 +1,5 @@
-import React, { memo } from 'react';
-import { v4 as uuidv4 } from 'uuid';
-import { Form, FormGroup, Label, Input, FormText, Button } from 'reactstrap';
+import React from 'react';
+import { Form, FormGroup, Label, Input } from 'reactstrap';
 
 function Search(props) {
   const debFun = (callback, delay) => {
