@@ -76,6 +76,9 @@
       // Inheritance Start   // Prototypinng
       function Employee(name) {
         this.name = name;
+        this.name = function () {
+          console.log('Name',name);
+        };
         this.timesheet = function () {
           console.log('Timesheet');
         };
@@ -85,7 +88,6 @@
       }
 
       function Manager() {
-        this.name = name;
         this.task = function () {
           console.log('Project Manager');
         };
@@ -94,9 +96,23 @@
       Manager.prototype = emp;
 
       var man = new Manager('Mandar');
+      man.name();
       man.timesheet();
       man.task();
       // Inheritance END
+
+
+      // Let Example Start
+      function TestLet(){
+        let letx = 10
+        if(true){
+          let letx = 1000
+          console.log(letx)
+        }
+        console.log(letx)
+      }
+      TestLet()
+      // Let Example End
     </script>
   </head>
   <body>
