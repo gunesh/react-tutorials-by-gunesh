@@ -79,10 +79,10 @@ export default function App() {
                   }}
                 />
                 <Collapse isOpen={toggle} navbar={true}>
-                  <NavItem>
+                  {/* <NavItem>
                     <NavLink href="/components/">Components</NavLink>
-                  </NavItem>
-                  <NavItem>
+                  </NavItem> */}
+                  {/* <NavItem>
                     <NavLink href="https://github.com/reactstrap/reactstrap">
                       GitHub
                     </NavLink>
@@ -91,13 +91,13 @@ export default function App() {
                     <DropdownToggle caret nav>
                       Options
                     </DropdownToggle>
-                    <DropdownMenu right>
+                    <DropdownMenu >
                       <DropdownItem>Option 1</DropdownItem>
                       <DropdownItem>Option 2</DropdownItem>
                       <DropdownItem divider />
                       <DropdownItem>Reset</DropdownItem>
                     </DropdownMenu>
-                  </UncontrolledDropdown>
+                  </UncontrolledDropdown> */}
                   <NavbarText>Simple Text</NavbarText>
                 </Collapse>
               </Navbar>
