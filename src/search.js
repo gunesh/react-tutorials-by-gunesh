@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { Form, FormGroup, Label, Input, FormText, Button } from 'reactstrap';
 
 function Search(props) {
   const debFun = (callback, delay) => {
@@ -9,15 +10,21 @@ function Search(props) {
     timerId = setTimeout(callback, delay);
   };
   return (
-    <div className="col-lg-8 offset-lg-2">
-      <input
-        type="text"
-        placeholder="Enter to search here"
-        onChange={(e) => {
-          debFun(props.callback, props.delay, e.target.value);
-        }}
-      />
-    </div>
+    <>
+      <Form>
+        <FormGroup>
+          <Label for="exampleEmail"></Label>
+          <Input
+            id="exampleEmail"
+            type="text"
+            placeholder="Enter to search here"
+            onChange={(e) => {
+              debFun(props.callback, props.delay, e.target.value);
+            }}
+          />
+        </FormGroup>
+      </Form>
+    </>
   );
 }
 
