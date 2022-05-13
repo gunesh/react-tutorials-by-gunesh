@@ -26,13 +26,13 @@ function HomePage(props) {
           </tr>
         </thead>
         <tbody>
-          {!users.items && (
+          {!users && (
             <tr>
               <td colSpan="3">Loading........</td>
             </tr>
           )}
-          {users.items &&
-            users.items.map((user, index) => (
+          {users &&
+            users.map((user, index) => (
               <tr key={`ele-${user.id}-${index}`}>
                 <td>{user.id}</td>
                 <td>{user.name}</td>

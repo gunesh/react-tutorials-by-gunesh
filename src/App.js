@@ -9,6 +9,7 @@ import { userActions } from './red/_actions';
 
 export default function App() {
   const users = useSelector((state) => state.users);
+  const [userlist, setUserList] = useState(users.items);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -30,13 +31,30 @@ export default function App() {
   function debounceExample() {
     dispatch(userActions.getAll());
   }
+  function onChangeSearch(st) {
+    if (st !== '') {
+      var tmpArr = users.items;
+      var newArr = tmpArr.filter((item) => {
+        if (item.name.indexOf(st) > -1) {
+          return item;
+        }
+      });
+    } else {
+      var newArr = users.items;
+    }
+    setUserList(newArr);
+  }
 
   return (
     <>
       <Container>
         <Row>
           <Col>
-            <Search callback={debounceExample} delay={3000} />
+            <Search
+              callback={debounceExample}
+              onChange={onChangeSearch}
+              delay={3000}
+            />
           </Col>
         </Row>
         <Row>
@@ -55,7 +73,7 @@ export default function App() {
             <HomePage
               handleReload={handleReload}
               handleDeleteUser={handleDeleteUser}
-              users={users}
+              users={userlist}
             />
           </Col>
         </Row>
