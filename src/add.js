@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { Button } from 'reactstrap';
 
 function Add(props) {
   const data = {
@@ -27,14 +28,15 @@ function Add(props) {
   };
   return (
     <div className="col-lg-8 offset-lg-2">
-      <button
+      <Button
+       color="success"
         onClick={() => {
           props.handleAdd(data);
         }}
       >
         {' '}
         Add
-      </button>
+      </Button>
     </div>
   );
 }

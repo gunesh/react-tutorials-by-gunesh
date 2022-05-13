@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Container, Row, Col } from 'reactstrap';
 import Search from './search';
 import HomePage from './list';
 import Add from './add';
@@ -31,15 +32,34 @@ export default function App() {
   }
 
   return (
-    <div>
-      {/* <MemoizeExamples /> */}
-      <Search callback={debounceExample} delay={3000}/>
-      <Add handleAdd={handleAdd} /> <br />
-      <HomePage
-        handleReload={handleReload}
-        handleDeleteUser={handleDeleteUser}
-        users={users}
-      />
-    </div>
+    <>
+      <Container>
+        <Row>
+          <Col>
+            <Search callback={debounceExample} delay={3000} />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Add handleAdd={handleAdd} /> <br />
+          </Col>
+        </Row>
+        {/* <Row>
+          <Col>
+            <MemoizeExamples />
+          </Col>
+        </Row> */}
+
+        <Row>
+          <Col>
+            <HomePage
+              handleReload={handleReload}
+              handleDeleteUser={handleDeleteUser}
+              users={users}
+            />
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
 }

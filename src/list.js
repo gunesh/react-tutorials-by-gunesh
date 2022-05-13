@@ -1,20 +1,22 @@
 import React, { useEffect, memo } from 'react';
+import { Button, Table } from 'reactstrap';
 
 function HomePage(props) {
   const { users } = props;
   return (
     <div className="col-lg-8 offset-lg-2">
-      <button
+      <Button
+        color="success"
         onClick={() => {
           props.handleReload();
         }}
       >
         {' '}
         Reload
-      </button>{' '}
+      </Button>{' '}
       <br />
       <br />
-      <table border="1" width="100%">
+      <Table bordered border="1" width="100%">
         <thead>
           <tr>
             <th>ID</th>
@@ -51,7 +53,7 @@ function HomePage(props) {
               </tr>
             ))}
         </tbody>
-      </table>
+      </Table>
     </div>
   );
 }
