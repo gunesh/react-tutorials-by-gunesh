@@ -72,6 +72,31 @@
       })();
       stuNs.getName();
       // IIFF Namespace END
+
+      // Inheritance Start   // Prototypinng
+      function Employee(name) {
+        this.name = name;
+        this.timesheet = function () {
+          console.log('Timesheet');
+        };
+        this.task = function () {
+          console.log('Development');
+        };
+      }
+
+      function Manager() {
+        this.name = name;
+        this.task = function () {
+          console.log('Project Manager');
+        };
+      }
+      var emp = new Employee('Indra');
+      Manager.prototype = emp;
+
+      var man = new Manager('Mandar');
+      man.timesheet();
+      man.task();
+      // Inheritance END
     </script>
   </head>
   <body>
