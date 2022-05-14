@@ -69,7 +69,7 @@ stuNs.getName();
 function Employee(name) {
   this.name = name;
   this.name = function () {
-    console.log('Name',name);
+    console.log('Name', name);
   };
   this.timesheet = function () {
     console.log('Timesheet');
@@ -93,28 +93,42 @@ man.timesheet();
 man.task();
 // Inheritance END
 
-
 // Let Example Start
-function TestLet(){
-  let letx = 10
-  if(true){
-    let letx = 1000
-    console.log(letx)
+function TestLet() {
+  let letx = 10;
+  if (true) {
+    let letx = 1000;
+    console.log(letx);
   }
-  console.log(letx)
+  console.log(letx);
 }
-TestLet()
+TestLet();
 // Let Example End
 
 //
-function LetVar(){
+function LetVar() {
   var varlet = 10;
-  if(true){
-    console.log(varlet)
+  if (true) {
+    console.log(varlet);
     varlet = 20;
-    console.log(varlet)
+    console.log(varlet);
   }
-  console.log(varlet)
+  console.log(varlet);
 }
-LetVar()
+LetVar();
 //
+
+var x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1, 4, 6];
+console.log(x);
+var a = x.map((item) => item * 2);
+console.log(a);
+var y = x.filter((item) => item > 5);
+console.log(y);
+var b = x.map((item) => item).filter((abc, index, self) => [self[index], abc]);
+console.log(b);
+const abc = 1500;
+if (true) {
+  const abc = 2500;
+  console.log(abc);
+}
+console.log(abc);
