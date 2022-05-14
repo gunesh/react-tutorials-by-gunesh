@@ -132,3 +132,19 @@ if (true) {
   console.log(abc);
 }
 console.log(abc);
+
+// Capgemin
+
+const initState = {
+  name: 'Gunesh',
+  age: '10',
+};
+const getName = () => {
+  return 'Hello India';
+};
+
+initState.Prototype = getName;
+console.log(initState);
+
+getName.bind(initState);
+console.log(getName.bind(initState));
