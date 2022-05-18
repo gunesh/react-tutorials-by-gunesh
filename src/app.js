@@ -37,6 +37,7 @@ export default function App() {
         return (
           <>
             <b
+             key={item.id}
               onClick={() => {
                 dispatch({ type: 'REMOVE', payload: item.id });
               }}
