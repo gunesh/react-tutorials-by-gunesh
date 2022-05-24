@@ -41,14 +41,13 @@ class Captcha extends React.Component {
     const { value, callback, load, expired } = this.state || {};
     return (
       <div className="App">
-       
-        <h2>
+        {/* <h2>
           NOTE: initial load delayed <em>{DELAY / 1000}sec</em> to demonstrate
           callback
         </h2>
         <h3>Recaptcha loaded callback: {callback}</h3>
         <h5>Recaptcha value: {value}</h5>
-        <h5>Expired: {expired}</h5>
+        <h5>Expired: {expired}</h5> */}
         {load && (
           <ReCAPTCHA
             style={{ display: 'inline-block' }}
