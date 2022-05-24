@@ -41,15 +41,7 @@ class Captcha extends React.Component {
     const { value, callback, load, expired } = this.state || {};
     return (
       <div className="App">
-        <h1>
-          <a
-            href="https://github.com/dozoisch/react-google-recaptcha"
-            target="_blank"
-          >
-            react-google-recaptcha
-          </a>
-          : 2.1.0
-        </h1>
+       
         <h2>
           NOTE: initial load delayed <em>{DELAY / 1000}sec</em> to demonstrate
           callback
