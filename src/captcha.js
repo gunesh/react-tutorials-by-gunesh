@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReCAPTCHA from 'react-google-recaptcha';
-import './styles.css';
+import './style.css';
 
 const TEST_SITE_KEY = '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
 const DELAY = 1500;
