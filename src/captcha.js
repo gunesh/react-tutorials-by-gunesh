@@ -62,4 +62,4 @@ class Captcha extends React.Component {
     );
   }
 }
-export default Captcha;
+export { Captcha };

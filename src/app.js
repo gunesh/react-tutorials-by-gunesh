@@ -1,5 +1,5 @@
 import React from 'react';
-import Captcha from './captcha'
+import {Captcha} from './captcha'
 
 export default function App() {
   return (
