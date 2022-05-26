@@ -62,4 +62,23 @@ class Captcha extends React.Component {
     );
   }
 }
-export { Captcha };
+
+const MyCaptcha = () => {
+  return (
+    <>
+      <ReCAPTCHA
+        style={{ display: 'inline-block' }}
+        theme="dark"
+        ref={null}
+        sitekey={TEST_SITE_KEY}
+        onChange={() => {
+          console.log('change');
+        }}
+        asyncScriptOnLoad={() => {
+          console.log('load');
+        }}
+      />
+    </>
+  );
+};
+export { Captcha, MyCaptcha };
