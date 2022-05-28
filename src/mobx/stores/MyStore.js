@@ -67,6 +67,7 @@ export class MyStore {
     //   this.loader = false;
     //   console.log(res.data);
     // });
+    this.loader = false;
     return response;
   }
 

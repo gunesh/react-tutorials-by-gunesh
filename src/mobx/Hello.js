@@ -41,6 +41,7 @@ const Hello = (prop) => {
       >
         Get Data From API
       </button>
+      {myStore.loader && 'Loading.............'}
     </Fragment>
   );
 };
