@@ -24,12 +24,6 @@ const Pagination = ({ current_page, records_per_page, total_records }) => {
   };
 
   const changePage = (page) => {
-    var btn_next = document.getElementById('btn_next');
-    var btn_prev = document.getElementById('btn_prev');
-    var listing_table = document.getElementById('listingTable');
-    var page_span = document.getElementById('page');
-
-    // Validate page
     if (page < 1) page = 1;
     if (page > numPages()) page = numPages();
 
@@ -46,11 +40,11 @@ const Pagination = ({ current_page, records_per_page, total_records }) => {
     if (page == numPages()) {
       btn_next_style = {
         visibility: 'hidden',
-      }
+      };
     } else {
       btn_next_style = {
         visibility: 'visible',
-      }
+      };
     }
   };
 
@@ -60,22 +54,22 @@ const Pagination = ({ current_page, records_per_page, total_records }) => {
 
   return (
     <Fragment>
-      <a
+      <button
         style={btn_pre_style}
         onClick={() => {
           prevPage();
         }}
       >
         Prev
-      </a>{' '}
-      <a
+      </button>{' '}
+      <button
         style={btn_next_style}
         onClick={() => {
           nextPage();
         }}
       >
         Next
-      </a>{' '}
+      </button>{' '}
       Page: <span id="page"></span>
     </Fragment>
   );
