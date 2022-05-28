@@ -64,7 +64,7 @@ export class MyStore {
   async fetchData() {
     this.loader = true;
     const response = await axios.get(
-      `https://jsonplaceholder.typicode.com/users`
+      `https://reqres.in/api/users?page=${this.page}&per_page=${this.per_page}`
     );
     // console.log(response.data);
     this.itemDetails = response.data;
