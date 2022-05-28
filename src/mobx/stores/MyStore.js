@@ -12,80 +12,54 @@ import {
 import axios from 'axios';
 export class MyStore {
   loader = false;
-  myFirstVar = 'Test';
-  listItem = [];
-  totalItem = 0;
-  page = 1;
-  per_page = 1;
   itemDetails = [];
-  testFormInit = {
-    name: undefined,
-    type: undefined,
-    number: undefined,
-    account: undefined,
+  option = {
+    count: 0,
+    page: 1,
+    per_page: 1,
+    total_pages:0,
   };
-  selectForm = {
-    my_select: '',
-    title: '',
-  };
+  myOptions = [{ a: 'Option', b: 1 }];
 
-  myOptions = [
-    { a: 'Option', b: 1 },
-    { a: 'Option', b: 2 },
-    { a: 'Option', b: 3 },
-  ];
-  myCustomOption() {
-    let list = this.myOptions;
-    let new_list = list.map((item) => {
-      let obj = {};
-      obj['lbl'] = item.a + ' ' + item.b * 10;
-      obj['val'] = item.b;
-      return obj;
-    });
-    return new_list;
-  }
   constructor() {
     makeObservable(this, {
       myOptions: observable,
       itemDetails: observable,
-      totalItem: observable,
-      page: observable,
-      per_page: observable,
+      option: observable,
+      loader: observable,
     });
-  }
-  submitMyForm(form) {
-    console.log(form);
   }
 
   addEle() {
-    this.myOptions.push({ a: 'Option', b: 1 });
+    this.myOptions.push({ a: 'Option', b: Math.random() });
+  }
+
+  setApiOption(page, per_page) {
+    this.option = { ...this.option, page, per_page };
   }
 
   async fetchData() {
+    const url = `https://reqres.in/api/users?page=${this.option.page}&per_page=${this.option.per_page}`;
+    console.log('URL===>', url);
+    return await axios.get(url);
+  }
+
+  apiData(callback) {
     this.loader = true;
-    const response = await axios.get(
-      `https://reqres.in/api/users?page=${this.page}&per_page=${this.per_page}`
-    );
 
-    this.page = response.data.page;
-    this.totalItem = response.data.total;
-    this.per_page = response.data.per_page;
-    this.itemDetails = response.data.data;
-    this.loader = false;
-    console.log('A', this);
-    console.log('B', response.data);
-    return response;
-  }
-
-  apiData() {
-    return this.fetchData()
-      .then((data) => {
-        return data;
-      })
-      .catch((err) => console.log(err));
-  }
-
-  getData() {
-    return this.itemDetails;
+    setTimeout(() => {
+      this.fetchData()
+        .then((response) => {
+          this.option.page = response.data.page;
+          this.option.count = response.data.total;
+          this.option.per_page = response.data.per_page;
+          this.option.total_pages = response.data.total_pages;
+          this.itemDetails = response.data.data;
+        //  callback(this.itemDetails);
+          this.loader = false;
+          console.log('D', this, response);
+        })
+        .catch((err) => console.log('Errors:', err));
+    }, 2000);
   }
 }

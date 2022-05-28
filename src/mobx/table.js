@@ -1,81 +1,155 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { observer } from 'mobx-react';
 import { useMyStore } from './hooks';
+import BlockUi from 'react-block-ui';
+import 'react-block-ui/style.css';
 
-const Pagination = (props) => {
-  const { current_page, records_per_page, total_records } = props;
-  let btn_pre_style = {
-    visibility: 'visible',
-  };
-  let btn_next_style = {
-    visibility: 'visible',
-  };
-  const prevPage = () => {
-    if (current_page > 1) {
-      current_page--;
-      changePage(current_page);
+
+const Paging = observer((props) =>{
+  const myStore = useMyStore();
+
+  const PageLink = ()=>{
+    var rows = [];
+    for (var i = 1; i <= myStore.option.total_pages; i++) {
+        rows.push(<li class="page-item ">
+          <button class="page-link" onClick={()=>{
+            console.log('Hi',i)
+          }}>{i}</button>
+          </li>);
     }
-  };
+    return rows;
+  }
 
-  const nextPage = () => {
-    if (current_page < numPages()) {
-      current_page++;
-      changePage(current_page);
-    }
-  };
+  const PagePre = ()=>{     
+    return ( <li class="page-item ">
+    <button class="page-link" onClick={()=>{
+      console.log('Prev')
+    }} aria-label="Previous">
+      <span aria-hidden="true">&laquo;</span>
+      <span class="sr-only"></span>
+    </button>
+  </li>);
+  }
 
-  const changePage = (page) => {
-    if (page < 1) page = 1;
-    if (page > numPages()) page = numPages();
-
-    if (page == 1) {
-      btn_pre_style = {
-        visibility: 'hidden',
-      };
-    } else {
-      btn_pre_style = {
-        visibility: 'visible',
-      };
-    }
-
-    if (page == numPages()) {
-      btn_next_style = {
-        visibility: 'hidden',
-      };
-    } else {
-      btn_next_style = {
-        visibility: 'visible',
-      };
-    }
-    props.onNextPage();
-  };
-
-  const numPages = () => {
-    return Math.ceil(total_records / records_per_page);
-  };
+  const PageNext = ()=>{     
+    return ( <li class="page-item ">
+    <button class="page-link"  onClick={()=>{
+      console.log('Next')
+    }} aria-label="Next">
+      <span aria-hidden="true">&raquo;</span>
+      <span class="sr-only"></span>
+    </button>
+  </li>);
+  }
 
   return (
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        {PagePre()}
+        {PageLink()}
+        {PageNext()}
+       </ul>
+    </nav>
+  )
+});
+
+const Settings = observer((props) => {
+  const myStore = useMyStore();
+  const [fields, setFields] = useState({
+    page: myStore.option.page,
+    per_page: myStore.option.per_page,
+    total_pages:myStore.option.total_pages
+  });
+  const changeHandler = (e) => {
+    var tmpState = { ...fields, [e.target.name]: [e.target.value] };
+    setFields(tmpState);
+  };
+  const { page, per_page,total_pages } = fields;
+  const showData = () => {
+    // Set Option for API call
+    myStore.setApiOption(page, per_page);
+    myStore.apiData((data) => {});
+    console.log('E', myStore);
+  };
+
+  useEffect(() => {
+    showData();
+  }, []);
+
+  const Options = ()=>{
+      var rows = [];
+      for (var i = 1; i <= myStore.option.total_pages; i++) {
+          rows.push(<option value={i}>{i}</option>);
+      }
+      return rows;
+  }
+
+  
+  return (
     <Fragment>
+
+
+
+<div class="input-group">
+          <span class="input-group-btn">
+              <button type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quant[2]">
+                <span class="glyphicon glyphicon-minus">+</span>
+              </button>
+          </span>
+          <input type="text" name="quant[2]" class="form-control input-number" value="10" min="1" max="100" />
+          <span class="input-group-btn">
+              <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]">
+                  <span class="glyphicon glyphicon-plus">-</span>
+              </button>
+          </span>
+      </div>
+
+
+
+     Count: {myStore.option.count}<br />
+     Total Pages: {myStore.option.total_pages}<br />
+      Page No :{' '}
+      <input
+        type="text"
+        name="page"
+        value={page}
+        onChange={(e) => {
+          changeHandler(e);
+        }}
+        placeholder="Enter Page No."
+      />{' '} 
+      Per Page :{' '}
+
+      {/* <select value={per_page} name="per_page"  onChange={(e) => {
+        console.log('WWW',e.target.value)
+          changeHandler(e);
+          showData();
+        }}>
+        {Options()} 
+      </select> */}
+      <input
+        type="text"
+        name="per_page"
+        value={per_page}
+        onChange={(e) => {
+          changeHandler(e);
+        }}
+        placeholder="Enter Per Page Record"
+      />{' '}
+      <br /> <br />
       <button
-        style={btn_pre_style}
         onClick={() => {
-          prevPage();
+          showData();
         }}
       >
-        Prev
-      </button>{' '}
-      <button
-        style={btn_next_style}
-        onClick={() => {
-          nextPage();
-        }}
-      >
-        Next
-      </button>{' '}
-      Page: <span id="page"></span>
+        Get Data From API with Setting
+      </button>
+      <br />
+      <br />
+      {/* {myStore.option.total_pages && } */}
     </Fragment>
   );
-};
+});
 
 const TableData = ({ id, first_name, last_name, email }) => {
   return (
@@ -100,46 +174,28 @@ const TableHead = () => {
 
 const Table = () => {
   const myStore = useMyStore();
-  const [itemDetails, setItemDetails] = useState(myStore.itemDetails);
 
-  const showData = () => {
-    myStore.apiData();
-    console.log(myStore);
-    console.log('API Response Data', myStore.itemDetails);
-  };
-  useEffect(() => {
-    showData();
-  }, [itemDetails]);
   return (
     <Fragment>
-      <button
-        onClick={() => {
-          showData();
-        }}
-      >
-        Get Data From API
-      </button>
-      <br />
-      <table className="table table-striped table-bordered" border="1" width="100%">
-        <thead className="thead-dark">
-          <TableHead />
-        </thead>
-        <tbody>
-          {itemDetails.map((item, index) => {
-            return (
-              <Fragment>
-                <TableData key={`${item.id}-${index}`} {...item} />
-              </Fragment>
-            );
-          })}
-        </tbody>
-      </table>
-      <Pagination
-        current_page={myStore.page}
-        records_per_page={myStore.per_page}
-        total_records={myStore.totalItem}
-        onNextPage={showData}
-      />
+      {/* <Paging /> */}
+      <Settings onLoad={}/>
+      <BlockUi blocking={myStore.loader}>
+        <table
+          className="table table-striped table-bordered"
+          border="1"
+          width="100%"
+        >
+          <thead className="thead-dark">
+            <TableHead />
+          </thead>
+          <tbody>
+            {myStore.itemDetails &&
+              myStore.itemDetails.map((item, index) => {
+                return <TableData key={`${item.id}-${index}`} {...item} />;
+              })}
+          </tbody>
+        </table>
+      </BlockUi>
     </Fragment>
   );
 };
