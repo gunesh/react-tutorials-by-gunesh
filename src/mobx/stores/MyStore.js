@@ -68,6 +68,7 @@ export class MyStore {
     );
 
     this.page = response.data.page;
+    this.totalItem = response.data.total;
     this.per_page = response.data.per_page;
     this.itemDetails = response.data.data;
     this.loader = false;
