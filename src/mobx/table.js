@@ -46,7 +46,7 @@ const Table = () => {
           {itemDetails.map((item, index) => {
             return (
               <Fragment>
-                <TableData {...item} />
+                <TableData key={`${item.id}-${index}`} {...item} />
               </Fragment>
             );
           })}
