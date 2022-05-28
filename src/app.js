@@ -19,7 +19,7 @@ function App() {
         );
       })}
       <br />
-      Total : {list.length}
+      Total : {list.length} <br />
       <Hello />
     </div>
   );
