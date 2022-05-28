@@ -5,14 +5,14 @@ import App2 from './mobx/App2';
 import Table from './mobx/table';
 import GoogleChart from './Charts/GoogleChart';
 import { MapContainer } from './GoogleMap';
-import { BasicTable } from './Tables';
+import { TableExample } from './Tables';
 
 function App() {
   return (
     <div>
       <h1>Hello StackBlitz!</h1>
       <p>Start editing to see some magic happen :)</p>
-      <BasicTable />
+      <TableExample />
     </div>
   );
 }
