@@ -4,7 +4,7 @@ import { useMyStore } from './hooks';
 
 const Pagination = ({ current_page, records_per_page, total_records }) => {
   let btn_pre_style = {
-    visibility: 'hidden',
+    visibility: 'visible',
   };
   let btn_next_style = {
     visibility: 'visible',
