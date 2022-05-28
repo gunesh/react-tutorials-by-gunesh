@@ -66,7 +66,9 @@ export class MyStore {
     const response = await axios.get(
       `https://reqres.in/api/users?page=${this.page}&per_page=${this.per_page}`
     );
-    // console.log(response.data);
+    console.log(response.data);
+    this.page = response.page;
+    this.per_page = response.per_page;
     this.itemDetails = response.data;
     // .then((res) => {
     //   return (this.itemDetails = res.data);
