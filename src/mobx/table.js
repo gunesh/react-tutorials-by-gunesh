@@ -99,13 +99,16 @@ const TableHead = () => {
 const Table = () => {
   const myStore = useMyStore();
   const itemDetails = myStore.itemDetails;
+  const showData = () =>{
+    myStore.apiData();
+    console.log(myStore);
+    console.log('API Response Data', myStore.itemDetails);
+  }
   return (
     <Fragment>
       <button
         onClick={() => {
-          myStore.apiData();
-          console.log(myStore);
-          console.log('API Response Data', myStore.itemDetails);
+          showData()
         }}
       >
         Get Data From API
@@ -129,7 +132,7 @@ const Table = () => {
         current_page={myStore.page}
         records_per_page={myStore.per_page}
         total_records={myStore.totalItem}
-        onNextPage={myStore.apiData()}
+        onNextPage={}
       />
     </Fragment>
   );
