@@ -16,6 +16,7 @@ export class MyStore {
     my_select: '',
     title: '',
   };
+
   myOptions = [
     { a: 'Option', b: 1 },
     { a: 'Option', b: 2 },
@@ -36,8 +37,8 @@ export class MyStore {
     console.log(form);
   }
 
-  addEle(){
-    this.myOptions.push({ a: 'Option', b: 1 })
+  addEle() {
+    this.myOptions.push({ a: 'Option', b: 1 });
   }
 
   fetchData(id) {

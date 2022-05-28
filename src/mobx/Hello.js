@@ -1,8 +1,9 @@
 import React, { Fragment, useEffect } from 'react';
-import { observer } from 'mobx-react-lite';
+// import { observer } from 'mobx-react-lite';
+import {observer} from 'mobx-react'
 import { useMyStore } from './hooks';
 
-const Hello = observer((prop) => {
+const Hello = (prop) => {
   const myStore = useMyStore();
   const list = myStore.myOptions;
   // useEffect(() => {
@@ -31,5 +32,5 @@ const Hello = observer((prop) => {
       </button>
     </Fragment>
   );
-});
-export default Hello;
+};
+export default observer(Hello);
