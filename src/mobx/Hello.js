@@ -26,14 +26,20 @@ const Hello = (prop) => {
       <br />
       <button
         onClick={() => {
-          myStore.fetchData();
           myStore.addEle();
           //  console.log('After Add Element', myStore.myOptions);
-          myStore.apiData();
-          //  console.log('API Response Data', myStore.itemDetails);
         }}
       >
         Add Data in MobX
+      </button>{' '}
+      &nbsp;
+      <button
+        onClick={() => {
+          myStore.apiData();
+          console.log('API Response Data', myStore.itemDetails);
+        }}
+      >
+        Get Data From API
       </button>
     </Fragment>
   );
