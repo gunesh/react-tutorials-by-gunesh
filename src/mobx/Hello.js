@@ -26,6 +26,7 @@ const Hello = (prop) => {
       <br />
       <button
         onClick={() => {
+          myStore.fetchData()
           myStore.addEle();
           console.log('After Add', myStore.myOptions);
         }}

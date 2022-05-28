@@ -44,6 +44,7 @@ export class MyStore {
   constructor() {
     makeObservable(this, {
       myOptions: observable,
+      itemDetails:observable,
     });
   }
   submitMyForm(form) {
