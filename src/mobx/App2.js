@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import { Captcha, MyCaptcha } from './captcha';
 import Hello from './Hello';
 import { observer } from 'mobx-react';
 import { useMyStore } from './hooks';
