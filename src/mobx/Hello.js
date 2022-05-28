@@ -36,6 +36,7 @@ const Hello = (prop) => {
       <button
         onClick={() => {
           myStore.apiData();
+          console.log(myStore)
           console.log('API Response Data', myStore.itemDetails);
         }}
       >
