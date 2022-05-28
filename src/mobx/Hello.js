@@ -8,7 +8,7 @@ const Hello = (prop) => {
   const list = myStore.myOptions;
   useEffect(() => {
     console.log('Before Add', myStore.itemDetails);
-    myStore.fetchData();
+    console.log('Fetch Data', myStore.fetchData());
     console.log('After Add', myStore.itemDetails);
   }, []);
 

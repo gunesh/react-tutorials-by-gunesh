@@ -57,7 +57,7 @@ export class MyStore {
 
   fetchData(id) {
     this.loader = true;
-    axios
+    return axios
       .get(`https://jsonplaceholder.typicode.com/users/${id}`)
       .then((res) => {
         this.itemDetails = res.data;
