@@ -1,16 +1,14 @@
 import React, { Fragment } from 'react';
 import { Captcha, MyCaptcha } from './captcha';
-import Hello from './mobx/Hello';
+import Hello from './Hello';
 import { observer } from 'mobx-react';
-import { useMyStore } from './mobx/hooks';
+import { useMyStore } from './hooks';
 
-function App() {
+function App2() {
   const myStore = useMyStore();
   const list = myStore.myOptions;
   return (
     <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
       {list.map((item, index) => {
         return (
           <Fragment key={`${item.a}-${index}`}>
@@ -25,4 +23,4 @@ function App() {
   );
 }
 
-export default observer(App);
+export default observer(App2);
