@@ -28,9 +28,9 @@ const Hello = (prop) => {
         onClick={() => {
           myStore.fetchData();
           myStore.addEle();
-          //  console.log('After Add', myStore.myOptions);
+          //  console.log('After Add Element', myStore.myOptions);
           myStore.apiData();
-          //  console.log('Before Add', myStore.itemDetails);
+          //  console.log('API Response Data', myStore.itemDetails);
         }}
       >
         Add Data in MobX
