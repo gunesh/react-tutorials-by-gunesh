@@ -120,8 +120,8 @@ const Table = () => {
         Get Data From API
       </button>
       <br />
-      <table class="table table-striped table-bordered" border="1" width="100%">
-        <thead class="thead-dark">
+      <table className="table table-striped table-bordered" border="1" width="100%">
+        <thead className="thead-dark">
           <TableHead />
         </thead>
         <tbody>
