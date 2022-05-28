@@ -36,6 +36,10 @@ export class MyStore {
     console.log(form);
   }
 
+  addEle(){
+    this.myOptions.push({ a: 'Option', b: 1 })
+  }
+
   fetchData(id) {
     this.loader = true;
     axios
