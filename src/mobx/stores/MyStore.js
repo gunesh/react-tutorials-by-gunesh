@@ -1,5 +1,14 @@
 import {} from 'mobx-react-lite';
-import { observable } from 'mobx';
+
+import {
+  action,
+  computed,
+  makeObservable,
+  observable,
+  autorun,
+  runInAction,
+} from 'mobx';
+
 import axios from 'axios';
 export class MyStore {
   loader = false;
@@ -32,7 +41,11 @@ export class MyStore {
     });
     return new_list;
   }
-  constructor() {}
+  constructor() {
+    makeObservable(this, {
+      myOptions: observable,
+    });
+  }
   submitMyForm(form) {
     console.log(form);
   }
