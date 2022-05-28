@@ -17,7 +17,7 @@ const Hello = (prop) => {
       {list.map((item, index) => {
         return (
           <Fragment key={`${item.a}-${index}`}>
-            {`- ${item.a}- `} <br />
+            {`${item.a}-${index}`}{' '}
           </Fragment>
         );
       })}
