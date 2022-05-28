@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect } from 'react';
 // import { observer } from 'mobx-react-lite';
-import {observer} from 'mobx-react'
+import { observer } from 'mobx-react';
 import { useMyStore } from './hooks';
 
 const Hello = (prop) => {
@@ -21,6 +21,8 @@ const Hello = (prop) => {
           </Fragment>
         );
       })}
+      <br />
+      Total : {list.length}
       <br />
       <button
         onClick={() => {
