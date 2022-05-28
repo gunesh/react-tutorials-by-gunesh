@@ -38,8 +38,8 @@ const Table = () => {
         Get Data From API
       </button>
       <br />
-      <table>
-        <thead>
+      <table class="table table-striped table-bordered" border="1" width="100%">
+        <thead class="thead-dark">
           <TableHead />
         </thead>
         <tbody>
