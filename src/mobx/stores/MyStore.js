@@ -14,6 +14,9 @@ export class MyStore {
   loader = false;
   myFirstVar = 'Test';
   listItem = [];
+  totalItem = 0;
+  page = 1;
+  per_page = 1;
   itemDetails = [];
   testFormInit = {
     name: undefined,
@@ -45,6 +48,9 @@ export class MyStore {
     makeObservable(this, {
       myOptions: observable,
       itemDetails: observable,
+      totalItem: observable,
+      page: observable,
+      per_page: observable,
     });
   }
   submitMyForm(form) {
