@@ -44,7 +44,7 @@ export class MyStore {
   constructor() {
     makeObservable(this, {
       myOptions: observable,
-      itemDetails:observable,
+      itemDetails: observable,
     });
   }
   submitMyForm(form) {
@@ -55,15 +55,21 @@ export class MyStore {
     this.myOptions.push({ a: 'Option', b: 1 });
   }
 
-  fetchData(id) {
+  async fetchData(id) {
     this.loader = true;
-    return axios
-      .get(`https://jsonplaceholder.typicode.com/users/${id}`)
+    const response = await axios
+      .get(`https://jsonplaceholder.typicode.com/users`)
       .then((res) => {
-        this.itemDetails = res.data;
+        return (this.itemDetails = res.data);
         this.loader = false;
         console.log(res.data);
       });
+    return response.data;
+  }
+
+  async axiosTest() {
+    const response = await axios.get(url);
+    return response.data;
   }
 
   getData() {
