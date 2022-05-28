@@ -1,7 +1,8 @@
 import React, { Fragment, useEffect } from 'react';
+import { observer } from 'mobx-react-lite';
 import { useMyStore } from './hooks';
 
-const Hello = (prop) => {
+const Hello = observer((prop) => {
   const myStore = useMyStore();
   const list = myStore.myOptions;
   // useEffect(() => {
@@ -23,11 +24,12 @@ const Hello = (prop) => {
       <button
         onClick={() => {
           myStore.addEle();
+          console.log('After Add', myStore.myOptions);
         }}
       >
         Add Data in MobX
       </button>
     </Fragment>
   );
-};
+});
 export default Hello;
