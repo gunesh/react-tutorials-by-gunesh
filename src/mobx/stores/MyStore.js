@@ -67,17 +67,12 @@ export class MyStore {
       `https://reqres.in/api/users?page=${this.page}&per_page=${this.per_page}`
     );
 
-    this.page = response.page;
-    this.per_page = response.per_page;
-    this.itemDetails = response.data;
-    // .then((res) => {
-    //   return (this.itemDetails = res.data);
-    //   this.loader = false;
-    //   console.log(res.data);
-    // });
+    this.page = response.data.page;
+    this.per_page = response.data.per_page;
+    this.itemDetails = response.data.data;
     this.loader = false;
-    console.log('A',this);
-    console.log('B',response.data);
+    console.log('A', this);
+    console.log('B', response.data);
     return response;
   }
 

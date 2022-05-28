@@ -2,12 +2,12 @@ import React, { Fragment } from 'react';
 import { observer } from 'mobx-react';
 import { useMyStore } from './hooks';
 
-const TableData = ({ id, name, username, email }) => {
+const TableData = ({ id, first_name, last_name, email }) => {
   return (
     <tr>
       <td>{id}</td>
-      <td>{name}</td>
-      <td>{username}</td>
+      <td>{first_name}</td>
+      <td>{last_name}</td>
       <td>{email}</td>
     </tr>
   );
@@ -16,8 +16,8 @@ const TableHead = () => {
   return (
     <tr>
       <th>ID</th>
-      <th>Name</th>
-      <th>Username</th>
+      <th>First Name</th>
+      <th>Last Name</th>
       <th>Email</th>
     </tr>
   );
