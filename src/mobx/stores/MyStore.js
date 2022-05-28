@@ -14,7 +14,7 @@ export class MyStore {
   loader = false;
   myFirstVar = 'Test';
   listItem = [];
-  itemDetails = {};
+  itemDetails = [];
   testFormInit = {
     name: undefined,
     type: undefined,
@@ -55,21 +55,27 @@ export class MyStore {
     this.myOptions.push({ a: 'Option', b: 1 });
   }
 
-  async fetchData(id) {
+  async fetchData() {
     this.loader = true;
-    const response = await axios
-      .get(`https://jsonplaceholder.typicode.com/users`)
-      .then((res) => {
-        return (this.itemDetails = res.data);
-        this.loader = false;
-        console.log(res.data);
-      });
-    return response.data;
+    const response = await axios.get(
+      `https://jsonplaceholder.typicode.com/users`
+    );
+    // console.log(response.data);
+    this.itemDetails = response.data;
+    // .then((res) => {
+    //   return (this.itemDetails = res.data);
+    //   this.loader = false;
+    //   console.log(res.data);
+    // });
+    return response;
   }
 
-  async axiosTest() {
-    const response = await axios.get(url);
-    return response.data;
+  apiData() {
+    return this.fetchData()
+      .then((data) => {
+        return data;
+      })
+      .catch((err) => console.log(err));
   }
 
   getData() {

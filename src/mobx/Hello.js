@@ -8,7 +8,7 @@ const Hello = (prop) => {
   const list = myStore.myOptions;
   useEffect(() => {
     console.log('Before Add', myStore.itemDetails);
-    console.log('Fetch Data', myStore.fetchData());
+
     console.log('After Add', myStore.itemDetails);
   }, []);
 
@@ -28,7 +28,9 @@ const Hello = (prop) => {
         onClick={() => {
           myStore.fetchData();
           myStore.addEle();
-          console.log('After Add', myStore.myOptions);
+          //  console.log('After Add', myStore.myOptions);
+          myStore.apiData();
+          //  console.log('Before Add', myStore.itemDetails);
         }}
       >
         Add Data in MobX
