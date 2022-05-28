@@ -129,6 +129,7 @@ const Table = () => {
         current_page={myStore.page}
         records_per_page={myStore.per_page}
         total_records={myStore.totalItem}
+        onNextPage={myStore.apiData()}
       />
     </Fragment>
   );
