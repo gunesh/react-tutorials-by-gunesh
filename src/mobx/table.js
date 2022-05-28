@@ -2,7 +2,8 @@ import React, { Fragment } from 'react';
 import { observer } from 'mobx-react';
 import { useMyStore } from './hooks';
 
-const Pagination = ({ current_page, records_per_page, total_records }) => {
+const Pagination = (props) => {
+  const { current_page, records_per_page, total_records } = props;
   let btn_pre_style = {
     visibility: 'visible',
   };
@@ -46,6 +47,7 @@ const Pagination = ({ current_page, records_per_page, total_records }) => {
         visibility: 'visible',
       };
     }
+    props.onNextPage()
   };
 
   const numPages = () => {
@@ -99,16 +101,16 @@ const TableHead = () => {
 const Table = () => {
   const myStore = useMyStore();
   const itemDetails = myStore.itemDetails;
-  const showData = () =>{
+  const showData = () => {
     myStore.apiData();
     console.log(myStore);
     console.log('API Response Data', myStore.itemDetails);
-  }
+  };
   return (
     <Fragment>
       <button
         onClick={() => {
-          showData()
+          showData();
         }}
       >
         Get Data From API
@@ -132,7 +134,7 @@ const Table = () => {
         current_page={myStore.page}
         records_per_page={myStore.per_page}
         total_records={myStore.totalItem}
-        onNextPage={}
+        onNextPage={showData}
       />
     </Fragment>
   );
