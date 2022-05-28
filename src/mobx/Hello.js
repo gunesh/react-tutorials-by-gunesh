@@ -12,13 +12,21 @@ const Hello = (prop) => {
 
   return (
     <Fragment>
-      {list.map((item) => {
+      {list.map((item, index) => {
         return (
-          <Fragment>
+          <Fragment key={`${item.a}-${index}`}>
             {`- ${item.a}- `} <br />
           </Fragment>
         );
       })}
+      <br />
+      <button
+        onClick={() => {
+          myStore.addEle();
+        }}
+      >
+        Add Data in MobX
+      </button>
     </Fragment>
   );
 };
