@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { observer } from 'mobx-react';
 import { useMyStore } from './hooks';
 
@@ -47,7 +47,7 @@ const Pagination = (props) => {
         visibility: 'visible',
       };
     }
-    props.onNextPage()
+    props.onNextPage();
   };
 
   const numPages = () => {
@@ -100,12 +100,16 @@ const TableHead = () => {
 
 const Table = () => {
   const myStore = useMyStore();
-  const itemDetails = myStore.itemDetails;
+  const [itemDetails, setItemDetails] = useState(myStore.itemDetails);
+
   const showData = () => {
     myStore.apiData();
     console.log(myStore);
     console.log('API Response Data', myStore.itemDetails);
   };
+  useEffect(() => {
+    showData();
+  }, [itemDetails]);
   return (
     <Fragment>
       <button
