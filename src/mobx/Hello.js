@@ -6,11 +6,12 @@ import { useMyStore } from './hooks';
 const Hello = (prop) => {
   const myStore = useMyStore();
   const list = myStore.myOptions;
-  useEffect(() => {
-    console.log('Before Add', myStore.itemDetails);
+  // useEffect(() => {
+  //   console.log('Before Add', myStore.itemDetails);
 
-    console.log('After Add', myStore.itemDetails);
-  }, []);
+  //   console.log('After Add', myStore.itemDetails);
+  // }, []);
+  const itemDetails = myStore.itemDetails;
 
   return (
     <Fragment>
@@ -43,6 +44,7 @@ const Hello = (prop) => {
         Get Data From API
       </button>
       {myStore.loader && 'Loading.............'}
+      {JSON.stringify(itemDetails)}
     </Fragment>
   );
 };
