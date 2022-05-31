@@ -1,8 +1,13 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import App from './app';
+import { Captcha, MyCaptcha } from './captcha';
 
 const rootElement = document.getElementById('root');
 
-ReactDOM.render(<h1>Hello, from Guru99 Tutorials!</h1>, rootElement);
+ReactDOM.render(
+  <div>
+    Hello, from Guru99 Tutorials!
+    <Captcha />
+  </div>,
+  rootElement
+);
