@@ -15,7 +15,7 @@ class Captcha extends React.Component {
       load: false,
       expired: 'false',
     };
-    this._reCaptchaRef = React.createRef();
+    // this._reCaptchaRef = React.createRef();
   }
 
   componentDidMount() {
