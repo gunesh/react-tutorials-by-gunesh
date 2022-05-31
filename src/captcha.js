@@ -52,7 +52,7 @@ class Captcha extends React.Component {
           <ReCAPTCHA
             style={{ display: 'inline-block' }}
             theme="dark"
-            ref={this._reCaptchaRef}
+            // ref={this._reCaptchaRef}
             sitekey={TEST_SITE_KEY}
             onChange={this.handleChange}
             asyncScriptOnLoad={this.asyncScriptOnLoad}
