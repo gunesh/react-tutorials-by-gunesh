@@ -5,7 +5,7 @@
   "dependencies": {
     "react": "15.5.4",
     "react-dom": "15.5.4",
-    "react-google-recaptcha": "2.1.0"
+    "react-google-recaptcha": "^0.14.2"
   },
   "scripts": {
     "start": "react-scripts start",
