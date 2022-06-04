@@ -1,26 +1,25 @@
-
-console.log('=================== Closure Example=================')
-var counter = (function() {
+console.log('=================== Closure Example=================');
+var counter = (function (arg) {
   var privateCounter = 0;
   function changeBy(val) {
     privateCounter += val;
   }
   return {
-    increment: function() {
-      changeBy(1);
+    increment: function (arg) {
+      changeBy(arg);
     },
-    decrement: function() {
-      changeBy(-1);
+    decrement: function (arg) {
+      changeBy(arg);
     },
-    value: function() {
+    value: function () {
       return privateCounter;
-    }
-  };   
+    },
+  };
 })();
 
 console.log(counter.value()); // 0
-counter.increment();
-counter.increment();
+counter.increment(200);
+counter.increment(-90);
 console.log(counter.value()); // 2
-counter.decrement();
+counter.decrement(1);
 console.log(counter.value()); // 1
