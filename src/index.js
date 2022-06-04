@@ -1,3 +1,4 @@
-import { Closure } from './example.js';
+import { Closure, Curring } from './example.js';
 
 Closure();
+Curring();
