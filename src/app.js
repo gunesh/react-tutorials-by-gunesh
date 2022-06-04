@@ -27,8 +27,8 @@ export default function App() {
 
       <button
         onClick={() => {
-          console.log(state);
           dispatch({ type: 'ADD', payload: { id: uuidv4() } });
+          console.log(state);
         }}
       >
         Add
