@@ -17,10 +17,10 @@ var counter = (function (arg) {
   };
 })();
 
-console.log(counter.value()); 
+console.log(counter.value());
 counter.increment(200);
-console.log(counter.value()); 
+console.log(counter.value());
 counter.increment(50);
-console.log(counter.value()); 
+console.log(counter.value());
 counter.decrement(-10);
-console.log(counter.value()); 
+console.log(counter.value());
