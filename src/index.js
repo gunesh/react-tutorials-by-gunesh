@@ -1,15 +1,18 @@
 import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
-// import App from './app';
-import { store, App } from './onelinesetup';
-import AppClass from './class_base_cmp'
+import ExternalAppStore from './ExternalAppStore';   // External React Redux store
+import { store, App } from './onelinesetup';   // Functional component and store
+import AppClass from './class_base_cmp'  // Class based Approach
+
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
 root.render(
   <Provider store={store}>
-    <AppClass />
+    <ExternalAppStore />  
+    {/* <App /> */}
+    {/* <AppClass /> */}
   </Provider>
 );
