@@ -9,7 +9,7 @@ import {
   runInAction,
 } from 'mobx';
 
-// Create Store File
+//1. Create Store File
 class MyStore {
   myOptions = [];
 
@@ -23,12 +23,13 @@ class MyStore {
   }
 }
 
-// Create Context
+// 2.Create Context
 const myStoreContext = createContext(new MyStore());
 
-// Create Custom hook
+// 3.Create Custom hook
 const useMyStore = () => useContext(myStoreContext);
 
+// 4. Create Component
 function MyMobxTest() {
   const myStore = useMyStore();
   return (
