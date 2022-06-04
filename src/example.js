@@ -29,6 +29,18 @@ function Closure() {
 
 function Curring() {
   console.log('=================== Curring Example=================');
+  (function (a) {
+    console.log(a);
+    return function (b) {
+      console.log(a, b);
+      return function (c) {
+        console.log(a, b, c);
+        return function (d) {
+          console.log(a, b, c, d);
+        };
+      };
+    };
+  })(1)(2)(3)(4);
 }
 
 export { Closure, Curring };
