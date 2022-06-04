@@ -1,15 +1,15 @@
 import React, { useReducer } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-const initState = { item: [], loader: false };
+const initState = { items: [], loader: false };
 const myReducer = (state, action) => {
   switch (action.type) {
     case 'ADD':
-      return { ...state, item: [...state.item, action.payload] };
+      return { ...state, items: [...state.items, action.payload] };
     case 'REMOVE':
       return {
         ...state,
-        item: state.item.filter((obj) => {
+        items: state.items.filter((obj) => {
           return obj.id !== action.payload;
         }),
       };
@@ -18,9 +18,10 @@ const myReducer = (state, action) => {
   }
 };
 
+
 export default function App() {
   const [state, dispatch] = useReducer(myReducer, initState);
-  const { item, loader } = state;
+  const { items, loader } = state;
   return (
     <div>
       <h1>useReducer Example</h1>
@@ -35,22 +36,22 @@ export default function App() {
       </button>
       <br />
       <ul>
-        {item.map((item) => {
-          return (
-            <li key={item.id}>
-              <b
-                key={item.id}
-                onClick={() => {
-                  dispatch({ type: 'REMOVE', payload: item.id });
-                }}
-              >
-                {item.id}
-              </b>{' '}
-              <br />
-            </li>
-          );
-        })}
-      </ul>
+      {items.map((item) => {
+        return (
+          <li key={item.id}>
+            <b
+              key={item.id}
+              onClick={() => {
+                dispatch({ type: 'REMOVE', payload: item.id });
+              }}
+            >
+              {item.id}
+            </b>{' '}
+            <br />
+          </li>
+        );
+      })}
+    </ul>
     </div>
   );
 }
