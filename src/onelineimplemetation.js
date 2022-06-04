@@ -1,18 +1,10 @@
 import React, { createContext, useContext } from 'react';
 import { observer } from 'mobx-react';
-import {
-  action,
-  computed,
-  makeObservable,
-  observable,
-  autorun,
-  runInAction,
-} from 'mobx';
+import { makeObservable, observable } from 'mobx';
 
 //1. Create Store File
 class MyStore {
   myOptions = [];
-
   constructor() {
     makeObservable(this, {
       myOptions: observable,
@@ -32,6 +24,7 @@ const useMyStore = () => useContext(myStoreContext);
 // 4. Create Component
 function MyMobxTest() {
   const myStore = useMyStore();
+
   return (
     <div>
       <h1>MyMobxTest</h1>
