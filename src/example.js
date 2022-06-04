@@ -43,4 +43,13 @@ function Curring() {
   })(1)(2)(3)(4);
 }
 
-export { Closure, Curring };
+function Spead(user) {
+  alert(`Bye, ${user}!`);
+}
+
+
+function Test() {
+  console.log(arguments)
+}
+
+export {Test, Closure, Curring };
