@@ -23,8 +23,8 @@ export default function App() {
   const { item, loader } = state;
   return (
     <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
+      <h1>useReducer Example</h1>
+      
       <button
         onClick={() => {
           dispatch({ type: 'ADD', payload: { id: uuidv4() } });
