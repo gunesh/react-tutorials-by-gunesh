@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-
 import './style.css';
 
 const initState = {
