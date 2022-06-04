@@ -1,4 +1,3 @@
-import Closure from './closure.js';
-
+import { Closure } from './example.js';
 
 Closure();

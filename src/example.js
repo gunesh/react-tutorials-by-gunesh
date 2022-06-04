@@ -27,4 +27,8 @@ function Closure() {
   console.log(counter.value());
 }
 
-export { Closure };
+function Curring() {
+  console.log('=================== Curring Example=================');
+}
+
+export { Closure, Curring };
