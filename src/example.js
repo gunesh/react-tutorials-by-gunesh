@@ -48,7 +48,8 @@ function Spead(user) {
 }
 
 function Test() {
+  console.log('=================== Argument Example=================');
   console.log(arguments);
 }
 
-export { Test, Closure, Curring,Spead };
+export { Test, Closure, Curring, Spead };
