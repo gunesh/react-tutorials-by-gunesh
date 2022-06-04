@@ -8,7 +8,7 @@ export function users(state = {}, action) {
       };
     case userConstants.ADD_SUCCESS:
       return {
-        items: [...state.items,action.data],
+        items: [...state.items, action.data],
       };
     case userConstants.ADD_FAILURE:
       return {
