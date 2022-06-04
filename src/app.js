@@ -2,7 +2,7 @@ import React, { useReducer } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 const initState = { item: [], loader: false };
-const myReducer = (state, action)=> {
+const myReducer = (state, action) => {
   switch (action.type) {
     case 'ADD':
       return { ...state, item: [...state.item, action.payload] };
@@ -16,7 +16,7 @@ const myReducer = (state, action)=> {
     default:
       return state;
   }
-}
+};
 
 export default function App() {
   const [state, dispatch] = useReducer(myReducer, initState);
@@ -27,7 +27,7 @@ export default function App() {
 
       <button
         onClick={() => {
-          console.log(state)
+          console.log(state);
           dispatch({ type: 'ADD', payload: { id: uuidv4() } });
         }}
       >
