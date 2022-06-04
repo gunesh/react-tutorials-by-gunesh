@@ -45,6 +45,18 @@ function Curring() {
 
 function Spead(user) {
   console.log('=================== Spread Example=================');
+  let arr = [1, 2, 3];
+  let arr2 = [4, 5, 6];
+  console.log('With Spread:', [...arr, ...arr2]);
+  console.log('Without Spread:', [arr, arr2]);
+}
+
+function Rest(user) {
+  console.log('=================== Spread Example=================');
+  let arr = [1, 2, 3];
+  let arr2 = [4, 5, 6];
+  console.log('With Spread:', [...arr, ...arr2]);
+  console.log('Without Spread:', [arr, arr2]);
 }
 
 function Test() {
@@ -52,4 +64,4 @@ function Test() {
   console.log(arguments);
 }
 
-export { Test, Closure, Curring, Spead };
+export { Test, Closure, Curring, Spead,Rest };
