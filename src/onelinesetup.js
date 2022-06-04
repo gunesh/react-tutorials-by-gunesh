@@ -52,7 +52,7 @@ function App() {
   return (
     <div>
       <h1>React Redux Test</h1>
-    
+
       <input
         type="text"
         name="name"
