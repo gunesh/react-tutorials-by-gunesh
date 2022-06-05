@@ -47,9 +47,8 @@ const App = (props) => {
   var i = 2;
   setInterval(() => {
     i++;
-    var name = i % 2 === 0 ? 'Gunesh' : 'Sarita';
-    setName(name);
-    console.log(i, name);
+    i % 2 === 0 ? setName('Gunesh') : setName('Sarita');
+    console.log(i, i % 2);
   }, 10000);
 
   return (
