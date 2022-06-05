@@ -45,11 +45,11 @@ const WithoutPureFunctionalComponent = (props) => {
 const App = (props) => {
   const [name, setName] = useState('Ramesh');
   var i = 2;
-  setInterval(() => {
-    i++;
-    i % 2 === 0 ? setName('Gunesh') : setName('Asatkar');
-    console.log(i, i % 2);
-  }, 10000);
+  // setInterval(() => {
+  //   i++;
+  //   i % 2 === 0 ? setName('Gunesh') : setName('Asatkar');
+  //   console.log(i, i % 2);
+  // }, 10000);
 
   return (
     <div>
