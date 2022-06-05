@@ -1,4 +1,4 @@
-import React, { memo,useState } from 'react';
+import React, { memo, useState } from 'react';
 
 class WithPureClassComponent extends React.PureComponent {
   constructor(props) {
@@ -48,8 +48,9 @@ const App = (props) => {
   setInterval(() => {
     i++;
     var name = i % 2 === 0 ? 'Gunesh' : 'Sarita';
+    setName(name);
     console.log(i, name);
-  }, 5000);
+  }, 10000);
 
   return (
     <div>
@@ -67,5 +68,5 @@ export {
   WithPureClassComponent,
   WithoutPureClassComponent,
   WithoutPureFunctionalComponent,
-  App
+  App,
 };
