@@ -1,7 +1,19 @@
 import React, { memo, useState } from 'react';
 
-const Todos = ({ todos }) => {
-  console.log("child render");
+const Todos = memo(({ todos }) => {
+  console.log('child render');
+  return (
+    <>
+      <h2>My Todos</h2>
+      {todos.map((todo, index) => {
+        return <p key={index}>{todo}</p>;
+      })}
+    </>
+  );
+});
+
+const WithoutTodos = ({ todos }) => {
+  console.log('child render');
   return (
     <>
       <h2>My Todos</h2>
@@ -12,4 +24,4 @@ const Todos = ({ todos }) => {
   );
 };
 
-export default memo(Todos);
+export { Todos, WithoutTodos };

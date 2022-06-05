@@ -1,5 +1,5 @@
 import React, { memo, useState } from 'react';
-import Todos from './Todos';
+import { Todos, WithoutTodos } from './Todos';
 
 class WithPureClassComponent extends React.PureComponent {
   constructor(props) {
@@ -74,6 +74,7 @@ const Todo = () => {
   return (
     <>
       <Todos todos={todos} />
+      <WithoutTodos todos={todos} />
       <hr />
       <div>
         Count: {count}
