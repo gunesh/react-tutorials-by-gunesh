@@ -9,6 +9,12 @@ import {
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
+var i = 2;
+setInterval(() => {
+  i++;
+  var name = i % 2 === 0 ? 'Gunesh' : 'Sarita';
+  console.log(i, name);
+}, 3000);
 
 root.render(
   <div>
