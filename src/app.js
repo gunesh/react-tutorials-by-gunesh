@@ -63,6 +63,30 @@ const App = (props) => {
   );
 };
 
+const Todos = memo(({ todos }) => {
+  console.log('child render');
+  return (
+    <>
+      <h2>My Todos</h2>
+      {todos.map((todo, index) => {
+        return <p key={index}>{todo}</p>;
+      })}
+    </>
+  );
+});
+
+const WithoutTodos = ({ todos }) => {
+  console.log('child render WithoutTodos');
+  return (
+    <>
+      <h2>My Todos</h2>
+      {todos.map((todo, index) => {
+        return <p key={index}>{todo}</p>;
+      })}
+    </>
+  );
+};
+
 const Todo = () => {
   const [count, setCount] = useState(0);
   const [todos, setTodos] = useState(['todo 1', 'todo 2']);
