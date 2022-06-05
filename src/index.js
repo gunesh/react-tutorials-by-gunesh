@@ -1,7 +1,8 @@
-import { Test, Closure, Curring, Spead, Rest } from './example.js';
+import React, { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './app';
 
-Test(1, 2, 3, 4);
-Closure();
-Curring();
-Spead();
-Rest();
+const rootElement = document.getElementById('root');
+const root = createRoot(rootElement);
+
+root.render(<App />);
