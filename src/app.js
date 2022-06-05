@@ -1,4 +1,5 @@
 import React, { memo, useState } from 'react';
+import Todos from './Todos';
 
 class WithPureClassComponent extends React.PureComponent {
   constructor(props) {
@@ -62,10 +63,31 @@ const App = (props) => {
   );
 };
 
+const Todo = () => {
+  const [count, setCount] = useState(0);
+  const [todos, setTodos] = useState(['todo 1', 'todo 2']);
+
+  const increment = () => {
+    setCount((c) => c + 1);
+  };
+
+  return (
+    <>
+      <Todos todos={todos} />
+      <hr />
+      <div>
+        Count: {count}
+        <button onClick={increment}>+</button>
+      </div>
+    </>
+  );
+};
+
 export {
   WithPureFunctionalComponent,
   WithPureClassComponent,
   WithoutPureClassComponent,
   WithoutPureFunctionalComponent,
   App,
+  Todo,
 };

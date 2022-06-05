@@ -1,4 +1,4 @@
-import { memo } from "react";
+import React, { memo, useState } from 'react';
 
 const Todos = ({ todos }) => {
   console.log("child render");
