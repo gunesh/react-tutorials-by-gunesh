@@ -14,7 +14,7 @@ setInterval(() => {
   i++;
   var name = i % 2 === 0 ? 'Gunesh' : 'Sarita';
   console.log(i, name);
-}, 3000);
+}, 5000);
 
 root.render(
   <div>
