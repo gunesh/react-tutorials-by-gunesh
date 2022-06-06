@@ -5,4 +5,4 @@ describe("ComponentName", () => {
   it("should render my component", () => {
     const wrapper = shallow(<App />);
   });
-});
+}); bb
