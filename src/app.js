@@ -1,5 +1,18 @@
 import React from 'react';
 
+function Hoc(HocComponent){
+  return class extends Component{
+      render(){
+          return (
+              <div>
+                  <HocComponent></HocComponent>
+              </div>
+
+          );
+      }
+  } 
+}
+
 function App() {
   return (
     <div>
@@ -9,4 +22,4 @@ function App() {
   );
 }
 
-export default App;
+export default Hoc(App);
