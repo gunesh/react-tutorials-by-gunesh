@@ -1,16 +1,15 @@
 import React from 'react';
 
-function Hoc(HocComponent){
-  return class extends Component{
-      render(){
-          return (
-              <div>
-                  <HocComponent></HocComponent>
-              </div>
-
-          );
-      }
-  } 
+function Hoc(HocComponent) {
+  return class extends Component {
+    render() {
+      return (
+        <div>
+          <HocComponent />
+        </div>
+      );
+    }
+  };
 }
 
 function App() {
@@ -18,7 +17,7 @@ function App() {
     <div>
       <h1>Hello StackBlitz!</h1>
       <p>Start editing to see some magic happen :)</p>
-   </div>
+    </div>
   );
 }
 
