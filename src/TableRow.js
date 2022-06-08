@@ -2,15 +2,12 @@ import React, { Component } from 'react';
 
 class TableRow extends Component {
   render() {
+    const { id, name } = this.props.obj;
     return (
-        <tr>
-          <td>
-            {this.props.obj.id}
-          </td>
-          <td>
-            {this.props.obj.name}
-          </td>
-        </tr>
+      <tr>
+        <td>{id}</td>
+        <td>{name}</td>
+      </tr>
     );
   }
 }
