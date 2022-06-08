@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
-import TableRow from './TableRow';
 
+const TableRow = (props) => {
+  const { id, name } = props.obj;
+  return (
+    <tr>
+      <td>{id}</td>
+      <td>{name}</td>
+    </tr>
+  );
+};
+
+export default TableRow;
 const StockList = (props) => {
   const tabRow = () => {
     if (props.data instanceof Array) {
