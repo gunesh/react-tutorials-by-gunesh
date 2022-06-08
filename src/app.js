@@ -33,10 +33,13 @@ const StockList = (props) => {
   );
 };
 
-export default function Hoc(HocComponent, data) {
+export default function Hoc(HocComponent, data,name) {
   return class extends Component {
     render() {
-      return <HocComponent data={data} />;
+      return <>
+      <h1>{name}</h1>
+      <HocComponent data={data} />
+      </>;
     }
   };
 }
@@ -56,7 +59,7 @@ const StocksData = [
   },
 ];
 
-const Stocks = Hoc(StockList, StocksData);
+const Stocks = Hoc(StockList, StocksData,'My Table');
 
 class App extends Component {
   render() {
