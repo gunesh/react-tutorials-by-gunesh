@@ -17,7 +17,7 @@ const StockList = (props) => {
             return <tr>
             <td>{object.id}</td>
             <td>
-            <button onClick={(object)=>{props.emit(object)}}>{object.name}</button>
+            <button onClick={(e)=>{props.emit(object)}}>{object.name}</button>
             </td>
           </tr>;
           })}
