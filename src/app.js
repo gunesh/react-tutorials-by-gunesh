@@ -13,7 +13,7 @@ const StocksData = [
   },
   {
     id: 3,
-    name: 'Reliance',
+    name: 'Atos',
   },
 ];
 
