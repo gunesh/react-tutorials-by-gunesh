@@ -1,71 +1,51 @@
-import React, { Component } from 'react';
+import React, { useCallback, useState } from 'react';
+import List from './List';
 
-
-const StockList = (props) => {
-  
-  return (
-    <div className="container">
-      <table className="table table-striped">
-        <thead>
-          <tr>
-            <td>Stock Name</td>
-            <td>Stock Price</td>
-          </tr>
-        </thead>
-        <tbody>
-          {props.data.map(function (object, i) {
-            return <tr>
-            <td>{object.id}</td>
-            <td>
-            <button onClick={(e)=>{props.emit(object)}}>{object.name}</button>
-            </td>
-          </tr>;
-          })}
-        </tbody>
-      </table>
-    </div>
-  );
-};
-
-export default function Hoc(HocComponent, data,name,emit) {
-  return class extends Component {
-    render() {
-      return <>
-      <h1>{name}</h1>
-      <HocComponent data={data} emit={emit} />
-      </>;
-    }
-  };
-}
-
-const StocksData = [
+function App() {
   {
-    id: 1,
-    name: 'TCS',
-  },
-  {
-    id: 2,
-    name: 'Infosys',
-  },
-  {
-    id: 3,
-    name: 'Atos',
-  },
-];
-const onClickHandler = (data)=>{
-console.log(data)
-}
-
-const Stocks = Hoc(StockList, StocksData,'My Table',onClickHandler);
-
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <Stocks />
-      </div>
-    );
+    /* Initial states */
   }
+  const [input, setInput] = useState(1);
+  const [light, setLight] = useState(true);
+
+  {
+    /* useCallback memoizes the getItems() which 
+       returns a list of number which is number+10
+       and number + 100 */
+  }
+  const getItems = useCallback(() => {
+    return [input + 10, input + 100];
+  }, [input]);
+
+  {
+    /* style for changing the theme */
+  }
+  const theme = {
+    backgroundColor: light ? 'White' : 'grey',
+    color: light ? 'grey' : 'white',
+  };
+
+  return (
+    <>
+      {/* set the theme in the parent div */}
+      <div style={theme}>
+        <input
+          type="number"
+          value={input}
+          // {/* When we input a number it is stored in
+          // our stateful variable */}
+          onChange={(event) => setInput(parseInt(event.target.value))}
+        />
+
+        {/* on click the button the theme is set to 
+            the opposite mode, light to dark and vice versa*/}
+        <button onClick={() => setLight((prevLight) => !prevLight)}>
+          {light ? 'dark mode' : 'light mode'}
+        </button>
+        <List getItems={getItems} />
+      </div>
+    </>
+  );
 }
 
 export default App;
