@@ -10,7 +10,6 @@ const TableRow = (props) => {
   );
 };
 
-export default TableRow;
 const StockList = (props) => {
   const tabRow = () => {
     if (props.data instanceof Array) {
