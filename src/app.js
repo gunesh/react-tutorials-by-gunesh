@@ -1,23 +1,8 @@
 import React, { Component } from 'react';
 
-const TableRow = (props) => {
-  const { id, name } = props.obj;
-  return (
-    <tr>
-      <td>{id}</td>
-      <td>{name}</td>
-    </tr>
-  );
-};
 
 const StockList = (props) => {
-  const tabRow = () => {
-    if (props.data instanceof Array) {
-      return props.data.map(function (object, i) {
-        return <TableRow obj={object} key={i} />;
-      });
-    }
-  };
+  
   return (
     <div className="container">
       <table className="table table-striped">
@@ -27,18 +12,27 @@ const StockList = (props) => {
             <td>Stock Price</td>
           </tr>
         </thead>
-        <tbody>{tabRow()}</tbody>
+        <tbody>
+          {props.data.map(function (object, i) {
+            return <tr>
+            <td>{object.id}</td>
+            <td>
+            <button onClick={(object)=>{props.emit(object)}}>{object.name}</button>
+            </td>
+          </tr>;
+          })}
+        </tbody>
       </table>
     </div>
   );
 };
 
-export default function Hoc(HocComponent, data,name) {
+export default function Hoc(HocComponent, data,name,emit) {
   return class extends Component {
     render() {
       return <>
       <h1>{name}</h1>
-      <HocComponent data={data} />
+      <HocComponent data={data} emit={emit} />
       </>;
     }
   };
@@ -58,8 +52,11 @@ const StocksData = [
     name: 'Atos',
   },
 ];
+const onClickHandler = (data)=>{
+console.log(data)
+}
 
-const Stocks = Hoc(StockList, StocksData,'My Table');
+const Stocks = Hoc(StockList, StocksData,'My Table',onClickHandler);
 
 class App extends Component {
   render() {
