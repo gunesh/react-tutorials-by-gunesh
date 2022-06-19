@@ -1,10 +1,17 @@
-import React from "react";
+
+import './App.css';
+import Header from './Header';
+import Menu from './Menu';
+import Dashboard from './Dashboard';
+import Footer from './Footer';
 
 function App() {
   return (
-    <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
+    <div class="wrapper">
+      <Header/>
+      <Menu/>
+      <Dashboard/>
+      <Footer/>
     </div>
   );
 }
