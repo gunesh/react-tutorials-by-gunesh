@@ -4,7 +4,6 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
 
-import { PersistGate } from 'redux-persist/integration/react';
 
 import './style.css';
 
@@ -40,7 +39,7 @@ const middleware = applyMiddleware();
 const store = createStore(rootReducer, initState, middleware);
 
 const persistConfig = {
-  key: 'root',
+  key: 'myapp',
   storage,
 };
 
