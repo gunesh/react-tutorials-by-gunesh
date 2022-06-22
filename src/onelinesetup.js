@@ -35,8 +35,6 @@ const users = function (state = initState, action) {
   return state;
 };
 const rootReducer = combineReducers({ users });
-const middleware = applyMiddleware();
-const store = createStore(rootReducer, initState, middleware);
 
 const persistConfig = {
   key: 'myapp',
@@ -117,4 +115,4 @@ function App() {
   );
 }
 
-export { App, store, pstore, persistor };
+export { App,  pstore, persistor };
