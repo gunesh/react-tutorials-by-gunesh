@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
+
+import { PersistGate } from 'redux-persist/integration/react';
+
 import './style.css';
 
 const initState = {
@@ -33,6 +38,15 @@ const users = function (state = initState, action) {
 const rootReducer = combineReducers({ users });
 const middleware = applyMiddleware();
 const store = createStore(rootReducer, initState, middleware);
+
+const persistConfig = {
+  key: 'root',
+  storage,
+};
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+let pstore = createStore(persistedReducer);
+let persistor = persistStore(pstore);
 
 function App() {
   const [fields, setFields] = useState({
@@ -104,4 +118,4 @@ function App() {
   );
 }
 
-export { App, store };
+export { App, store, pstore, persistor };
