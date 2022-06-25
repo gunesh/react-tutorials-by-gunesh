@@ -7,7 +7,7 @@ function App() {
       <h1>My UI Packages!</h1>
       <Button
         onEvent={() => {
-          console.log('ff');
+          console.log('Hello');
         }}
       >
         My Button
