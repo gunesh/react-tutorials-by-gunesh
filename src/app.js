@@ -2,9 +2,6 @@ import React from 'react';
 import {
   Button,
   Form,
-  FormGroup,
-  Label,
-  Input,
   Modal,
   ModalHeader,
   ModalBody,
@@ -12,59 +9,53 @@ import {
 } from 'reactstrap';
 
 function App() {
-  const [toggle,setToggle] = React.useState(true)
-  const toggleHnadler=()=>{
-    setToggle(!toggle)
-  }
+  const [toggle, setToggle] = React.useState(false);
+  const toggleHnadler = () => {
+    setToggle(!toggle);
+  };
   return (
     <div>
       <h1>Hello StackBlitz!</h1>
       <p>Start editing to see some magic happen :)</p>
 
       <div>
-        <Form inline onSubmit={function noRefCheck() {}}>
-          {/* <FormGroup>
-            <Label for="backdrop">Backdrop value</Label>{' '}
-            <Input
-              id="backdrop"
-              name="backdrop"
-              onChange={function noRefCheck() {}}
-              type="select"
-            >
-              <option value="true">true</option>
-              <option value="false">false</option>
-              <option value="static">"static"</option>
-            </Input>
-          </FormGroup>
-          <FormGroup check className="mx-2">
-            <Label check>
-              <Input
-                checked
-                onChange={function noRefCheck() {}}
-                type="checkbox"
-              />{' '}
-              Keyboard
-            </Label>
-          </FormGroup>{' '} */}
-          <Button color="danger" onClick={()=>{toggleHnadler()}}>
-            Click Me
-          </Button>
-        </Form>
-        --{toggle}22
+        <Button
+          color="danger"
+          onClick={() => {
+            toggleHnadler();
+          }}
+        >
+          Click Me
+        </Button>
+
         {console.log(toggle)}
-        <Modal toggle={toggle}>
-          <ModalHeader toggle={toggle}>
+        <Modal toggle={toggle} isOpen={toggle} backdrop="static">
+          <ModalHeader
+            toggle={() => {
+              toggleHnadler();
+            }}
+          >
             Modal title
           </ModalHeader>
           <ModalBody>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={true}>
+            {/* <Button
+              color="primary"
+              onClick={() => {
+                toggleHnadler();
+              }}
+            >
               Do Something
-            </Button>{' '}
-            <Button onClick={true}>Cancel</Button>
+            </Button>{' '} */}
+            <Button
+              onClick={() => {
+                toggleHnadler();
+              }}
+            >
+              Cancel
+            </Button>
           </ModalFooter>
         </Modal>
       </div>
