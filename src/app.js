@@ -12,6 +12,10 @@ import {
 } from 'reactstrap';
 
 function App() {
+  const [toggle,setToggle] = React.useState(true)
+  const toggleHnadler=()=>{
+    setToggle(!toggle)
+  }
   return (
     <div>
       <h1>Hello StackBlitz!</h1>
@@ -42,12 +46,14 @@ function App() {
               Keyboard
             </Label>
           </FormGroup>{' '} */}
-          <Button color="danger" onClick={true}>
+          <Button color="danger" onClick={()=>{toggleHnadler()}}>
             Click Me
           </Button>
         </Form>
-        <Modal toggle={true}>
-          <ModalHeader toggle={true}>
+        --{toggle}22
+        {console.log(toggle)}
+        <Modal toggle={toggle}>
+          <ModalHeader toggle={toggle}>
             Modal title
           </ModalHeader>
           <ModalBody>
