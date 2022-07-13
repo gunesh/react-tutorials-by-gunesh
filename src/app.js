@@ -1,13 +1,11 @@
-import React from 'react';
+import React from "react";
+import Button from "./components/button";
 
-function App() {
+export const App = () => {
   return (
-    <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
-    
-    </div>
+    <>
+      <h1>Hello world React!</h1>
+      <Button />
+    </>
   );
-}
-
-export default App;
+};
