@@ -1,13 +1,14 @@
-import { Container } from "react-bootstrap";
-import { Routes, Route } from "react-router-dom";
+import React from 'react';
+import { Container } from 'react-bootstrap';
+import { Routes, Route } from 'react-router-dom';
 
 // Layout
-import Layout from "./layout/Layout";
+import Layout from './layout/Layout';
 
 // pages
-import Home from "./pages/Home";
-import About from "./pages/About";
-import NotFound from "./pages/NotFound";
+import Home from './pages/Home';
+import About from './pages/About';
+import NotFound from './pages/NotFound';
 
 const App = () => {
   return (
