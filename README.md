@@ -1,50 +1,60 @@
-## react-redux-architecture
+# React Bootstrap Starter
 
-View the running [website](https://codebelt.github.io/react-redux-architecture/)
+![logo](./screenshots/react-bootstrap-starter.png)
 
-Check out the source code in different formats:
+[Documentation](https://chrisdevcode.hashnode.dev/react-and-bootstrap-starter-template) | [Live Demo](https://react-bootstrap-temp.netlify.app/)
 
-- [React/Redux (TypeScript — Classes)](https://github.com/codeBelt/react-redux-architecture/tree/TypeScript)
-- [React/Redux (JavaScript — Classes)](https://github.com/codeBelt/react-redux-architecture/tree/JavaScript)
-- [React Hooks/Redux (TypeScript — Functions)](https://github.com/codeBelt/react-redux-architecture/tree/ts/function)
-- [React Hooks/Redux (JavaScript — Functions)](https://github.com/codeBelt/react-redux-architecture/tree/js/function)
-- [React Hooks/Redux (TypeScript — Arrows)](https://github.com/codeBelt/react-redux-architecture/tree/ts/arrows)
+React Bootstrap Starter is a starter template for react and bootstrap created by [Chris Achinga](http://chrisdev.netlify.app). This theme uses Create React App, react-bootstrap and gh-pages.
 
-Read the article explaining this code:
-[My Awesome React Redux Structure](https://medium.com/better-programming/my-awesome-react-redux-structure-6044e5007e22)
 
-![alt text](./appScreenshot.png 'App Screenshot')
+## Download and Installation
 
-## Create React App
+To begin using this template, choose one of the following options to get started:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Fork and clone the repository.
 
-### Install Packages
+Install the dependencies:
 
-#### `yarn` or `npm install`
+```powershell-interactive
+npm install
+```
 
-## Available Scripts
+## Usage
 
-In the project directory, you can run:
+Start editing and customizing according to your needs.
 
-#### `yarn start` or `npm start`
+Run locally:
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```powershell-interactive
+npm start
+```
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Dependencies:
 
-#### `yarn generate` or `npm generate`
+- [React](https://reactjs.org/)
+- [Create React App](https://create-react-app.dev/)
+- [react-bootstrap](https://react-bootstrap.github.io/)
 
-Scaffolding tool, see [generate-template-files](https://github.com/codeBelt/generate-template-files#readme). Check the `tools/templates` directory for existing templates.
+## Bugs and Issues
 
-#### `yarn build` or `npm build`
+Have a bug or an issue with this template? Open a new issue here on GitHub.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Copyright and License
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Copyright 2021 Chris Achinga. Code released under the [MIT license](LICENSE).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Status
+
+<div align='center'>
+
+[![GitHub forks](https://img.shields.io/github/forks/ChrisAchinga/react-bootstrap-starter)](https://github.com/ChrisAchinga/react-bootstrap-starter/network)
+
+[![GitHub stars](https://img.shields.io/github/stars/ChrisAchinga/react-bootstrap-starter)](https://github.com/ChrisAchinga/react-bootstrap-starter/stargazers)
+
+[![Depfu](https://badges.depfu.com/badges/80c94d4ad87f69ecde6d83ae05e65b63/status.svg)](https://depfu.com)
+
+[![Depfu](https://badges.depfu.com/badges/80c94d4ad87f69ecde6d83ae05e65b63/overview.svg)](https://depfu.com/github/ChrisAchinga/react-bootstrap-starter?project_id=18009)
+
+[![Depfu](https://badges.depfu.com/badges/80c94d4ad87f69ecde6d83ae05e65b63/count.svg)](https://depfu.com/github/ChrisAchinga/react-bootstrap-starter?project_id=18009)
+
+</div>
