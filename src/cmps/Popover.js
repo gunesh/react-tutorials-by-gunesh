@@ -1,25 +1,37 @@
-import React, { useState } from "react";
-import { Popover, PopoverHeader, Button ,PopoverBody} from "reactstrap";
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button, Popover, PopoverHeader, PopoverBody } from "reactstrap";
 
-const Example = (args) => {
-	const [modal, setModal] = useState(false);
-
-	const toggle = () => setModal(!modal);
+function App() {
+	// Popover open state
+	const [popoverOpen, setPopoverOpen] = React.useState(false);
 
 	return (
-		<div>
-			<Button id="Popover1" type="button" onClick={toggle}>
-				Launch Popover
-			</Button>
-			<Popover flip target="Popover1" toggle={toggle}>
-				<PopoverHeader>Popover Title</PopoverHeader>
-				<PopoverBody>
-					Sed posuere consectetur est at lobortis. Aenean eu leo quam.
-					Pellentesque ornare sem lacinia quam venenatis vestibulum.
-				</PopoverBody>
+		<div
+			style={{
+				display: "block",
+				width: 700,
+				padding: 30,
+			}}
+		>
+			<Button id="Popover1" type="button">
+				Popover
+			</Button>{" "}
+			<br />
+			<br />
+			<Popover
+				placement="right"
+				isOpen={popoverOpen}
+				target="Popover1"
+				toggle={() => {
+					setPopoverOpen(!popoverOpen);
+				}}
+			>
+				<PopoverHeader>Sample Popover Title</PopoverHeader>
+				<PopoverBody>Sample Body Text to display...</PopoverBody>
 			</Popover>
 		</div>
 	);
-};
+}
 
-export default Example;
+export default App;

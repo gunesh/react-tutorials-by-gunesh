@@ -9,7 +9,17 @@ import {
 import Header from "../components/Header";
 import Meta from "../components/Meta";
 
-import { Slider, Toggle, Modal, Tabs, Navbar ,Drawer,Popover} from "../cmps";
+import {
+	Slider,
+	Toggle,
+	Modal,
+	Tabs,
+	Navbar,
+	Drawer,
+	Popover,
+	Spiner,
+	Toast
+} from "../cmps";
 
 const Home = (props) => {
 	const [open, setOpen] = useState("1");
@@ -72,15 +82,15 @@ const Home = (props) => {
 					</AccordionBody>
 				</AccordionItem>
 				<AccordionItem>
-					<AccordionHeader targetId="7">Accordion Item 3</AccordionHeader>
+					<AccordionHeader targetId="7">Spiner</AccordionHeader>
 					<AccordionBody accordionId="7">
-						<Toggle />
+						<Spiner />
 					</AccordionBody>
 				</AccordionItem>
 				<AccordionItem>
-					<AccordionHeader targetId="8">Accordion Item 3</AccordionHeader>
+					<AccordionHeader targetId="8">Toast</AccordionHeader>
 					<AccordionBody accordionId="8">
-						<Toggle />
+						<Toast />
 					</AccordionBody>
 				</AccordionItem>
 			</Accordion>
