@@ -19,7 +19,9 @@ import {
 	Popover,
 	Spiner,
 	Formik,
-	Toast
+	FormikForm,
+	FormikYup,
+	Toast,
 } from "../cmps";
 
 const Home = (props) => {
@@ -96,12 +98,25 @@ const Home = (props) => {
 				</AccordionItem>
 
 				<AccordionItem>
-					<AccordionHeader targetId="8">Formik</AccordionHeader>
-					<AccordionBody accordionId="8">
+					<AccordionHeader targetId="11">Formik</AccordionHeader>
+					<AccordionBody accordionId="11">
 						<Formik />
 					</AccordionBody>
 				</AccordionItem>
 
+				<AccordionItem>
+					<AccordionHeader targetId="10">FormikForm</AccordionHeader>
+					<AccordionBody accordionId="10">
+						<FormikForm />
+					</AccordionBody>
+				</AccordionItem>
+
+				<AccordionItem>
+					<AccordionHeader targetId="12">FormikYup</AccordionHeader>
+					<AccordionBody accordionId="12">
+						<FormikYup />
+					</AccordionBody>
+				</AccordionItem>
 			</Accordion>
 		</div>
 	);
