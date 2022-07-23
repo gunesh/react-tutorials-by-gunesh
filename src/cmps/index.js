@@ -7,3 +7,5 @@ export { default as Drawer } from './Drawer';
 export { default as Popover } from './Popover';
 export { default as Spiner } from './Spiner';
 export { default as Toast } from './Toast';
+
+export { default as Formik } from './Formik';
