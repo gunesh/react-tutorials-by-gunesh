@@ -1,51 +1,19 @@
 {
-  "name": "react-bootstrap-starter",
-  "version": "0.5.0",
+  "name": "react",
+  "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@popperjs/core": "^2.11.5",
-    "@testing-library/dom": "^8.16.0",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.8.3",
-    "@types/react": ">=16.14.8",
-    "bootstrap": "^5.2.0",
-    "formik": "^2.2.9",
-    "react": "^17.0.2",
-    "react-bootstrap": "^1.6.5",
-    "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0",
-    "react-router-bootstrap": "^0.25.0",
-    "react-router-dom": "^6.0.2",
-    "react-scripts": "4.0.3",
-    "reactstrap": "^9.1.2",
-    "sass": "^1.54.0",
-    "typescript": "^4.7.4",
-    "web-vitals": "^1.1.1",
-    "yup": "^0.32.11"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "react-router-dom": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "react-scripts": "latest"
   }
 }
