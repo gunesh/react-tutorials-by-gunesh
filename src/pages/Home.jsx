@@ -9,6 +9,8 @@ import {
 import Header from "../components/Header";
 import Meta from "../components/Meta";
 
+import { Slider, Toggle, Modal, Tabs, Navbar ,Drawer,Popover} from "../cmps";
+
 const Home = (props) => {
 	const [open, setOpen] = useState("1");
 	const toggle = (id) => {
@@ -26,33 +28,59 @@ const Home = (props) => {
 
 			<Accordion open={open} toggle={toggle}>
 				<AccordionItem>
-					<AccordionHeader targetId="1">Accordion Item 1</AccordionHeader>
+					<AccordionHeader targetId="1">Slider</AccordionHeader>
 					<AccordionBody accordionId="1">
-						<strong>This is the first item's accordion body.</strong>
-						You can modify any of this with custom CSS or overriding our default
-						variables. It's also worth noting that just about any HTML can go
-						within the <code>.accordion-body</code>, though the transition does
-						limit overflow.
+						<Slider />
 					</AccordionBody>
 				</AccordionItem>
 				<AccordionItem>
-					<AccordionHeader targetId="2">Accordion Item 2</AccordionHeader>
+					<AccordionHeader targetId="2">Toggle</AccordionHeader>
 					<AccordionBody accordionId="2">
-						<strong>This is the second item's accordion body.</strong>
-						You can modify any of this with custom CSS or overriding our default
-						variables. It's also worth noting that just about any HTML can go
-						within the <code>.accordion-body</code>, though the transition does
-						limit overflow.
+						<Toggle />
 					</AccordionBody>
 				</AccordionItem>
 				<AccordionItem>
-					<AccordionHeader targetId="3">Accordion Item 3</AccordionHeader>
+					<AccordionHeader targetId="3">Modal</AccordionHeader>
 					<AccordionBody accordionId="3">
-						<strong>This is the third item's accordion body.</strong>
-						You can modify any of this with custom CSS or overriding our default
-						variables. It's also worth noting that just about any HTML can go
-						within the <code>.accordion-body</code>, though the transition does
-						limit overflow.
+						<Modal />
+					</AccordionBody>
+				</AccordionItem>
+
+				<AccordionItem>
+					<AccordionHeader targetId="4">Tabs</AccordionHeader>
+					<AccordionBody accordionId="4">
+						<Tabs />
+					</AccordionBody>
+				</AccordionItem>
+				<AccordionItem>
+					<AccordionHeader targetId="9">Navbar</AccordionHeader>
+					<AccordionBody accordionId="9">
+						<Navbar />
+					</AccordionBody>
+				</AccordionItem>
+				<AccordionItem>
+					<AccordionHeader targetId="5">Drawer</AccordionHeader>
+					<AccordionBody accordionId="5">
+						<Drawer />
+					</AccordionBody>
+				</AccordionItem>
+
+				<AccordionItem>
+					<AccordionHeader targetId="6">Popover</AccordionHeader>
+					<AccordionBody accordionId="6">
+						<Popover />
+					</AccordionBody>
+				</AccordionItem>
+				<AccordionItem>
+					<AccordionHeader targetId="7">Accordion Item 3</AccordionHeader>
+					<AccordionBody accordionId="7">
+						<Toggle />
+					</AccordionBody>
+				</AccordionItem>
+				<AccordionItem>
+					<AccordionHeader targetId="8">Accordion Item 3</AccordionHeader>
+					<AccordionBody accordionId="8">
+						<Toggle />
 					</AccordionBody>
 				</AccordionItem>
 			</Accordion>
