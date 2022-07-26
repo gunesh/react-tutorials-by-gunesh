@@ -129,7 +129,7 @@ const Home = (props) => {
         <AccordionItem>
           <AccordionHeader targetId="14">MTable</AccordionHeader>
           <AccordionBody accordionId="14">
-            <MTable />
+            {/* <MTable /> */}
           </AccordionBody>
         </AccordionItem>
         <AccordionItem>
