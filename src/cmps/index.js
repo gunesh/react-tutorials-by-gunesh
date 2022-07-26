@@ -7,9 +7,8 @@ export { default as Drawer } from './Drawer';
 export { default as Popover } from './Popover';
 export { default as Spiner } from './Spiner';
 export { default as Toast } from './Toast';
-
 export { default as Formik } from './Formik';
-
 export { default as FormikForm } from './Form';
-
 export { default as FormikYup } from './FormikYup';
+
+export { default as Captcha } from './captcha';
