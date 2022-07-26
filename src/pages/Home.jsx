@@ -22,7 +22,8 @@ import {
   FormikForm,
   FormikYup,
   Toast,
-	Captcha,
+  Captcha,
+  MTable,
 } from '../cmps';
 
 const Home = (props) => {
@@ -126,9 +127,9 @@ const Home = (props) => {
           </AccordionBody>
         </AccordionItem>
         <AccordionItem>
-          <AccordionHeader targetId="14">FormikYup</AccordionHeader>
+          <AccordionHeader targetId="14">MTable</AccordionHeader>
           <AccordionBody accordionId="14">
-            <FormikYup />
+            <MTable />
           </AccordionBody>
         </AccordionItem>
         <AccordionItem>

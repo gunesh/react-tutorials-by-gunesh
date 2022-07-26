@@ -12,3 +12,4 @@ export { default as FormikForm } from './Form';
 export { default as FormikYup } from './FormikYup';
 
 export { default as Captcha } from './captcha';
+export { default as MTable } from './table';
